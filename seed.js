@@ -49,36 +49,49 @@ const UsersShopsFavorite = sqlz.define('usersshopsfavorite',{
   schema: 'public'
 })
 
-sqlz
-  .authenticate()
-  .then(() => {
-    console.log(`connected`)
-  })
-  .catch(err => {
-    console.error(`unable to connect: ${err}`)
-  })
+// sqlz
+//   .authenticate()
+//   .then(() => {
+//     console.log(`connected`)
+//   })
+//   .catch(err => {
+//     console.error(`unable to connect: ${err}`)
+//   })
   
-  User.sync({force: true}).then(() => {
-    return User.create({
-      name: 'trevor',
-      avatarurl: 'image.jpg'
-    })
-  })
-  Shop.sync({force: true}).then(() => {
-    return Shop.create({
-      avatarurl: 'image.jpg',
-      name: 'trevors-shop'
-    })
-  })
+  
+  
+  // User.sync({force: true}).then(() => {
+  //   return User.create({
+  //     name: 'trevor',
+  //     avatarurl: 'image.jpg'
+  //   })
+  // })
+  // Shop.sync({force: true}).then(() => {
+  //   return Shop.create({
+  //     avatarurl: 'image.jpg',
+  //     name: 'trevors-shop'
+  //   })
+  // })
+  
+  User.sync({force: true});
+  Shop.sync({force: true});
+
+  Product.belongsTo(Shop);
   Product.sync({force: true});
-  Review.sync({force: true});
-  UsersProductsFavorite.sync({force:true});
-  UsersShopsFavorite.sync({force:true});
-  Review.belongsTo(User);
-  Review.belongsTo(Product);
-  UsersProductsFavorite.belongsTo(User);
-  UsersProductsFavorite.belongsTo(Product);
+
+  
   UsersShopsFavorite.belongsTo(User);
   UsersShopsFavorite.belongsTo(Shop)
-  Product.belongsTo(Shop);
+  UsersShopsFavorite.sync({force:true});
+
+  UsersProductsFavorite.belongsTo(User);
+  UsersProductsFavorite.belongsTo(Product);
+  UsersProductsFavorite.sync({force:true});
   
+  
+  Review.hasMany(User);
+  Review.hasMany(Product);
+  Review.belongsTo(User)
+  Review.belongsTo(Product);
+  
+  Review.sync({force: true});

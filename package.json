@@ -4,7 +4,9 @@
   "description": "recreation of etsys product images component",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack-watch": "webpack --watch",
+    "mon" :"nodemon server/app.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
   },
   "dependencies": {
     "morgan": "^1.9.0",
-    "pg": "^7.4.1"
+    "pg": "^7.4.1",
+    "webpack-dev-server": "^2.11.1"
   }
 }

@@ -34,7 +34,15 @@ let getImages = () => {
               more = JSON.parse(more);
               writeImagesToFile(more);
               imagesCount+= more.data.length;
-              console.log(imagesCount);
+              rp(options(4))
+                .then((cats) => {
+                  cats = JSON.parse(cats);
+                  writeImagesToFile(cats);
+
+                })
+                .catch((err) => {
+                  console.log(`err on 4th page: ${err}`);
+                })
             })
             .catch((err) => {
               console.log(`err on 3rd request: ${err}`)

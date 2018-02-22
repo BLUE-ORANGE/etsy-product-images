@@ -1,0 +1,23 @@
+{
+  "name": "",
+  "version": "",
+  "description": "",
+  "author": "",
+  "license": "",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+  },
+  "dependencies": {
+    "pg": "^7.4.1"
+  },
+  "devDependencies": {
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "express": "^4.16.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "sequelize": "^4.33.4",
+    "webpack": "^3.11.0"
+  }
+}

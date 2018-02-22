@@ -49,6 +49,12 @@ const UsersShopsFavorite = sqlz.define('usersshopsfavorite',{
   schema: 'public'
 })
 
+const ProductImageUrl = sqlz.define('productimageurl', {
+  imageUrl: Sequelize.STRING
+}, {
+  schema: 'public'
+});
+
 // sqlz
 //   .authenticate()
 //   .then(() => {
@@ -74,24 +80,45 @@ const UsersShopsFavorite = sqlz.define('usersshopsfavorite',{
   // })
   
   User.sync({force: true});
-  Shop.sync({force: true});
+  setTimeout(() => {
+    Shop.sync({force: true})
+  }, 5000);
 
-  Product.belongsTo(Shop);
-  Product.sync({force: true});
+  setTimeout(() => {
+    Product.belongsTo(Shop);
+    Product.sync({force: true});
 
-  
-  UsersShopsFavorite.belongsTo(User);
-  UsersShopsFavorite.belongsTo(Shop)
-  UsersShopsFavorite.sync({force:true});
+  }, 5000)
 
-  UsersProductsFavorite.belongsTo(User);
-  UsersProductsFavorite.belongsTo(Product);
-  UsersProductsFavorite.sync({force:true});
+  setTimeout(() => {
+    UsersShopsFavorite.belongsTo(User);
+    UsersShopsFavorite.belongsTo(Shop)
+    UsersShopsFavorite.sync({force:true});
+
+  }, 5000)
+
+  setTimeout(() => {
+    UsersProductsFavorite.belongsTo(User);
+    UsersProductsFavorite.belongsTo(Product);
+    UsersProductsFavorite.sync({force:true});
+
+  }, 5000)
   
   
-  Review.hasMany(User);
-  Review.hasMany(Product);
-  Review.belongsTo(User)
-  Review.belongsTo(Product);
-  
-  Review.sync({force: true});
+  setTimeout(() => {
+    Review.belongsTo(User)
+    Review.belongsTo(Product);
+    
+    Review.sync({force: true});
+
+  }, 5000);
+  // Review.hasMany(User);
+  // Review.hasMany(Product);
+
+  setTimeout(() => {
+    ProductImageUrl.belongsTo(Product);
+    ProductImageUrl.sync({force: true});
+
+  }, 5000)
+
+ 

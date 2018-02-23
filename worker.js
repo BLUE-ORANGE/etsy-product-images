@@ -41,7 +41,10 @@ let getImages = () => {
                     .then((cute) => {
                       cute = JSON.parse(cute);
                       writeImagesToFile(cute);
-                      imagesCount += cute.data.length;
+                      rp(options(6))
+                        .then((val) => {
+                          
+                        })
                     })
                     .catch((err) => {
                       console.log(`err on 5th page: ${err}`)
@@ -74,11 +77,12 @@ let writeImagesToFile = (obj) => {
     } else {
 
       var picture = {
-        id: pic.id,
+        
         title: pic.title,
-        link: pic.link
+        imageUrl: pic.link,
+        productId: getRandomInt(200)
       }
-      fs.appendFileAsync('data.json', JSON.stringify(picture, null, 2) +',' + '\n')
+      fs.appendFileAsync('dataCats.json', JSON.stringify(picture, null, 2) +',' + '\n')
         .then((data) => {
           console.log(`File saved: ${picture.title}`);
         })
@@ -90,6 +94,38 @@ let writeImagesToFile = (obj) => {
 }
 
 
-getImages();
+let options = (page) => {
+  return {
+    url: `https://api.imgur.com/3/gallery/search/top/{{window}}/${page}/`,
+    qs: { q_type: 'jpg', q: 'cute kitten' },
+
+    headers: {
+      Authorization: `Client-ID ce6360e2634f0e7`
+    }
+
+  };
+};
+
+let paginateCats = (pageCount) => {
+  let page = 1;
+  while (page < pageCount) {
+    rp(options(page))
+      .then((val) => {
+        val = JSON.parse(val)
+        writeImagesToFile(val);
+      })
+      .catch((err) => {
+        console.log(`error: ${err}`);
+      })
+      page++
+  }
+}
+
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+paginateCats(10);
 
 

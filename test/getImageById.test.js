@@ -8,7 +8,7 @@ import * as db from '../database';
 // "https://i.imgur.com/rY2aTMY.jpg",   productId: 30
 describe('getImageByIdAsync', () => {
 
-  test('works with promises', () => {
+  test('returns db record for image', () => {
 
     let id = 1;
     expect.assertions(4);

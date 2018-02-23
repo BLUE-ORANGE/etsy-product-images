@@ -1,4 +1,4 @@
-{
+var cats = [{
   "id": "6KVK2N0",
   "title": "My kitty decided to be cute last night, he's pushing 14, but he acts like a kitten sometimes",
   "link": "https://i.imgur.com/6KVK2N0.jpg"
@@ -1062,4 +1062,4 @@
   "id": "edrV1my",
   "title": "My kitten sleeps like she's ashamed of herself",
   "link": "https://i.imgur.com/edrV1my.jpg"
-},
+}]

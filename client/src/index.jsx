@@ -40,7 +40,7 @@ class App extends React.Component {
           this.state.images.map((image) => {
             return (
               <div>
-              <img src={image.imageUrl}></img>
+              <img src={image.imageUrl} style={{'width':'600px',' height':'200px'}}></img>
               <footer>{image.imageTitle}</footer>
               </div>
             );

@@ -14,14 +14,26 @@ const ProductImageUrl = sqlz.define('productimageurl', {
 });
 
 let getImageById = (id, cb) => {
-  console.log(id);
-  ProductImageUrl.findById(id)
+
+  return ProductImageUrl.findById(id)
   .then((image) => {
     cb(null, image);
   })
   .catch((err) => {
    cb(err, null);
   });
+}
+let getImageByIdAsync = (id) => {
+ return new Promise((resolve, reject) => {
+  return ProductImageUrl.findById(id)
+  .then((image) => {
+    resolve(image);
+  })
+  .catch((err) => {
+    reject(err);
+   });
+ })
+ 
 }
 let getFiveImages = (cb) => {
   ProductImageUrl.findAll({
@@ -41,3 +53,4 @@ let getFiveImages = (cb) => {
 
 module.exports.getFive = getFiveImages;
 module.exports.getImageById = getImageById;
+module.exports.getImageByIdAsync = getImageByIdAsync;

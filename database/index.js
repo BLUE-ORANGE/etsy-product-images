@@ -13,6 +13,16 @@ const ProductImageUrl = sqlz.define('productimageurl', {
   schema: 'public'
 });
 
+let getImageById = (id, cb) => {
+  console.log(id);
+  ProductImageUrl.findById(id)
+  .then((image) => {
+    cb(null, image);
+  })
+  .catch((err) => {
+   cb(err, null);
+  });
+}
 let getFiveImages = (cb) => {
   ProductImageUrl.findAll({
     where: {
@@ -30,3 +40,4 @@ let getFiveImages = (cb) => {
 }
 
 module.exports.getFive = getFiveImages;
+module.exports.getImageById = getImageById;

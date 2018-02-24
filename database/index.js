@@ -6,15 +6,13 @@ let sqlz = new Sequelize('etsy-scratch', 'student', 'student', {
 });
 
 const ProductImageUrl = sqlz.define('productimageurl', {
-  imgurHash: Sequelize.STRING,
-  imageTitle: Sequelize.STRING,
-  imageUrl: Sequelize.STRING
+  imageUrl: Sequelize.STRING,
+  productId: Sequelize.INTEGER
 }, {
   schema: 'public'
 });
 
 let getImageById = (id, cb) => {
-
   return ProductImageUrl.findById(id)
   .then((image) => {
     cb(null, image);

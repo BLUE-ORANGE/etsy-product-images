@@ -12,16 +12,16 @@ var ProductImageUrl = DBConnectionMock.define('productimageurl', {
 }, {
   schema: 'public'
 });
-// let getImageById = (id, cb) => {
-//   console.log(id);
-//   ProductImageUrl.findById(id)
-//   .then((image) => {
-//     cb(null, image);
-//   })
-//   .catch((err) => {
-//    cb(err, null);
-//   });
-// }
+ exports.getImageById = (id, cb) => {
+  console.log(id);
+  ProductImageUrl.findById(id)
+  .then((image) => {
+    cb(null, image);
+  })
+  .catch((err) => {
+   cb(err, null);
+  });
+}
 // You can also associate mock models as well
 exports.getImageByIdAsync = (id) => {
  return ProductImageUrl.findById(id)

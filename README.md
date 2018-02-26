@@ -1,12 +1,6 @@
 # BLUE-ORANGE - etsy-product-images
 Product image carousel for etsy product details page
-
-> Product image carousel for etsy product details page
-
-
 ## Related Projects
-
-
   - https://github.com/BLUE-ORANGE/etsy-seller-bar
   - https://github.com/BLUE-ORANGE/etsy-product-reviews
   - https://github.com/BLUE-ORANGE/etsy-product-summary

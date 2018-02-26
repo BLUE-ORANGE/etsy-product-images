@@ -8,19 +8,23 @@ class App extends React.Component {
     this.state = {
       images: []
     }
-    this.getImages();
+    this.getImages(this.getRandomInt(200));
   }
 
-  getImages() {
-    console.log('in method');
+getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+  getImages(id) {
+
     $.ajax({
       method: 'GET',
-      url: '/image',
+      url: `/v1/product/${id}/images`,
       contentType: 'application/json',
       success: (data) => {
         if (data) {
           this.setState({
-            images: data
+            images: data.results
           });
         }
       },
@@ -37,11 +41,11 @@ class App extends React.Component {
         <h1>Hello</h1>
         {
 
-          this.state.images.map((image) => {
+          this.state.images.map((image, ind) => {
             return (
-              <div>
+              <div  key={ind} >
               <img src={image.imageUrl} style={{'width':'600px',' height':'200px'}}></img>
-              <footer>{image.imageTitle}</footer>
+
               </div>
             );
           })

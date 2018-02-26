@@ -7,34 +7,32 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: []
-    }
+      images: [],
+    };
     this.getImages(this.getRandomInt(200));
   }
-  
+
   getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
-getImages(id) {
-  $.ajax({
-    method: 'GET',
-    url: `/v1/product/${id}/images`,
-    contentType: 'application/json',
-    success: (data) => {
-      if (data) {
-        this.setState({images: data.results});
-      }
-    }
-  })
+  getImages(id) {
+    $.ajax({
+      method: 'GET',
+      url: `/v1/product/${id}/images`,
+      contentType: 'application/json',
+      success: (data) => {
+        if (data) {
+          this.setState({ images: data.results });
+        }
+      },
+    });
+  }
 
-
-}
-
-  render(props) {
-    var settings = {
+  render() {
+    const settings = {
       dots: true,
-      arrows:false,
+      arrows: false,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
@@ -43,25 +41,20 @@ getImages(id) {
 
       centerMode: true,
       // centerPadding: '100px',
-      customPaging: function(i) {
-        console.log(i);
-        return <a ><img src={this.children[i].ref} style={{'width':'75px',' height':'50px'}}></img></a>
-      }
-    }
+      customPaging(i) {
+        return <img src={this.children[i].ref} alt="missing" style={{ width: '75px', ' height': '50px' }} />;
+      },
+    };
 
     return (
       <div>
         <Slider {...settings}>
-        {
-
-          this.state.images.map((image, ind) => {
-            return (
-              <div  key={image.id} ref={image.imageUrl}>
-              <img  src={image.imageUrl} style={{'width':'600px',' height':'200px'}}></img>
-
-              </div>
-            );
-          })
+          {
+          this.state.images.map((image, ind) => (
+            <div key={image.id} ref={image.imageUrl}>
+              <img alt="missing" src={image.imageUrl} style={{ width: '600px', ' height': '200px' }} />
+            </div>
+            ))
         }
         </Slider>
       </div>

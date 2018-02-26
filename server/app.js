@@ -1,19 +1,21 @@
-let express = require('express');
-let path = require('path');
-let bodyParser = require('body-parser');
-let jsonParser = bodyParser.json();
-let db = require('../database/index.js');
-let route = require('./routes.js');
+const express = require('express');
 
+const bodyParser = require('body-parser');
+
+const jsonParser = bodyParser.json();
+const db = require('../database/index.js');
+const route = require('./routes.js');
 
 
 const PORT = 3003;
-let app = express();
+const app = express();
 
-let morgan = require('morgan');
+const morgan = require('morgan');
+
 app.use(morgan('combined'));
 
-app.use(express.static('public'))
+app.use(express.static('public'));
+app.use(jsonParser);
 app.use('/v1/product', route);
 
 
@@ -23,15 +25,11 @@ app.get('/image', (req, res) => {
       console.log(`err retrieving images: ${err}`);
       res.statusCode = 404;
       res.send('Not found');
-    }  else {
+    } else {
       res.send(data);
     }
-  })
-})
-
-
-
-
+  });
+});
 
 
 app.listen(PORT, () => {

@@ -1,55 +1,49 @@
-let Sequelize = require('sequelize');
-let sqlz = new Sequelize('etsy-scratch', 'student', 'student', {
+const Sequelize = require('sequelize');
+
+const sqlz = new Sequelize('etsy-scratch', 'student', 'student', {
   host: 'localhost',
   port: 5432,
-  dialect: 'postgres'
+  dialect: 'postgres',
 });
 
 const ProductImageUrl = sqlz.define('productimageurl', {
   imageUrl: Sequelize.STRING,
-  productId: Sequelize.INTEGER
+  productId: Sequelize.INTEGER,
 }, {
-  schema: 'public'
+  schema: 'public',
 });
 
-let getImageById = (id, cb) => {
-  console.log(id);
+const getImageById = (id, cb) => {
   ProductImageUrl.findById(id)
-  .then((image) => {
-    cb(null, image);
-  })
-  .catch((err) => {
-   cb(err, null);
-  });
-}
+    .then((image) => {
+      cb(null, image);
+    })
+    .catch((err) => {
+      cb(err, null);
+    });
+};
 
-let getImagesForProduct = (id) => {
-  return ProductImageUrl.findAll({
-    where: {
-      productId: id
-    }
-  }).then((data) => {
-    return data;
-  }).catch((error) => {
-    return error;
-  })
-}
+const getImagesForProduct = id => ProductImageUrl.findAll({
+  where: {
+    productId: id,
+  },
+}).then(data => data).catch(error => error);
 
-let getFiveImages = (cb) => {
+const getFiveImages = (cb) => {
   ProductImageUrl.findAll({
     where: {
       id: {
-        gt: 200
-      }
-    }
+        gt: 200,
+      },
+    },
   })
-  .then(data => {
-    cb(null, data);
-  })
-  .catch(err => {
-    cb(err, null);
-  });
-}
+    .then((data) => {
+      cb(null, data);
+    })
+    .catch((err) => {
+      cb(err, null);
+    });
+};
 
 module.exports.getFive = getFiveImages;
 module.exports.getImageById = getImageById;

@@ -32,16 +32,14 @@ class App extends React.Component {
   }
 
   render() {
+    const nextBtn = <ForwardButton />;
+    const prevBtn = <BackButton />;
     const settings = {
       dots: true,
       arrows: true,
       infinite: false,
       speed: 500,
-      nextArrow: <ForwardButton />,
-      prevArrow: <BackButton />,
-
       dotsClass: 'slick-thumb slick-dots',
-
       centerMode: true,
       centerPadding: '200px',
       customPaging(i) {
@@ -51,8 +49,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <Slider {...settings}>
-          <BackButton />
+        <Slider {...settings} prevArrow={prevBtn} nextArrow={nextBtn}>
           {
           this.state.images.map(image => (
             <div key={image.id} ref={image.imageUrl}>
@@ -60,7 +57,6 @@ class App extends React.Component {
             </div>
             ))
         }
-          <ForwardButton />
         </Slider>
       </div>
     );

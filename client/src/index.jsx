@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Slider from 'react-slick';
 import $ from 'jquery';
 
 class App extends React.Component {
@@ -39,6 +40,7 @@ getRandomInt(max) {
     return (
       <div>
         <h1>Hello</h1>
+        <Slider>
         {
 
           this.state.images.map((image, ind) => {
@@ -50,6 +52,7 @@ getRandomInt(max) {
             );
           })
         }
+        </Slider>
       </div>
     );
   }

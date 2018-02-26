@@ -50,7 +50,7 @@ class App extends React.Component {
       <div>
         <Slider {...settings}>
           {
-          this.state.images.map((image, ind) => (
+          this.state.images.map(image => (
             <div key={image.id} ref={image.imageUrl}>
               <img alt="random cat" src={image.imageUrl} style={{ maxWidth: '75%', maxHeight: '75%' }} />
             </div>

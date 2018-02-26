@@ -36,13 +36,13 @@ class App extends React.Component {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1,
+
       dotsClass: 'slick-thumb slick-dots',
 
       centerMode: true,
-      // centerPadding: '100px',
+      centerPadding: '200px',
       customPaging(i) {
-        return <img src={this.children[i].ref} alt="missing" style={{ width: '75px', ' height': '50px' }} />;
+        return <img src={this.children[i].ref} alt="random cat" style={{ width: '75px', ' height': '50px' }} />;
       },
     };
 
@@ -52,7 +52,7 @@ class App extends React.Component {
           {
           this.state.images.map((image, ind) => (
             <div key={image.id} ref={image.imageUrl}>
-              <img alt="missing" src={image.imageUrl} style={{ width: '600px', ' height': '200px' }} />
+              <img alt="random cat" src={image.imageUrl} style={{ maxWidth: '75%', maxHeight: '75%' }} />
             </div>
             ))
         }

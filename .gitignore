@@ -64,3 +64,4 @@ typings/
 .env
 
 *bundle.js
+public/static/reactjs.png

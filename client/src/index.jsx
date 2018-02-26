@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Slider from 'react-slick';
 import $ from 'jquery';
+import ForwardButton from './components/ForwardButton';
+import BackButton from './components/BackButton';
 
 class App extends React.Component {
   constructor(props) {
@@ -32,10 +34,11 @@ class App extends React.Component {
   render() {
     const settings = {
       dots: true,
-      arrows: false,
-      infinite: true,
+      arrows: true,
+      infinite: false,
       speed: 500,
-      slidesToShow: 1,
+      nextArrow: <ForwardButton />,
+      prevArrow: <BackButton />,
 
       dotsClass: 'slick-thumb slick-dots',
 
@@ -49,6 +52,7 @@ class App extends React.Component {
     return (
       <div>
         <Slider {...settings}>
+          <BackButton />
           {
           this.state.images.map(image => (
             <div key={image.id} ref={image.imageUrl}>
@@ -56,6 +60,7 @@ class App extends React.Component {
             </div>
             ))
         }
+          <ForwardButton />
         </Slider>
       </div>
     );

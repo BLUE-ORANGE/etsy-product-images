@@ -34,23 +34,23 @@ getImages(id) {
   render(props) {
     var settings = {
       dots: true,
-      arrows:true,
+      arrows:false,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      dotsClass: 'slick-thumb slick-dots',
 
       centerMode: true,
-      centerPadding: '100px',
+      // centerPadding: '100px',
       customPaging: function(i) {
         console.log(i);
-        return <a style={{'display':'inline-block'}}><img src={this.children[i].ref} style={{'width':'150px',' height':'50px'}}></img></a>
+        return <a ><img src={this.children[i].ref} style={{'width':'75px',' height':'50px'}}></img></a>
       }
     }
 
     return (
       <div>
-        <h1>Hello</h1>
         <Slider {...settings}>
         {
 

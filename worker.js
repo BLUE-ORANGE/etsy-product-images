@@ -67,29 +67,66 @@ let getImages = () => {
     
 }
 
-let writeImagesToFile = (obj) => {
-  obj.data.forEach((pic) => {
-    if (!pic.link.includes('.jpg')) {
-      console.log(`${pic.link} doesn't include jpg, skipping`)
-    } else {
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
-      var picture = {
-        id: pic.id,
-        title: pic.title,
-        link: pic.link
-      }
-      fs.appendFileAsync('data.json', JSON.stringify(picture, null, 2) +',' + '\n')
-        .then((data) => {
+let writeImagesToFile = (obj, counter) => {
+
+  obj
+    .data
+    .forEach((pic) => {
+      if (!pic.link.includes('.jpg')) {
+        console.log(`${pic.link} doesn't include jpg, skipping`)
+      } else {
+
+        var picture = {
+
+          title: pic.title,
+          imageUrl: pic.link,
+          productId: counter < 201 ? counter : getRandomInt(200)
+        }
+        counter++;
+        fs.appendFileAsync('dataCats.json', JSON.stringify(picture, null, 2) + ',\n').then((data) => {
           console.log(`File saved: ${picture.title}`);
-        })
-        .catch((err) => {
+          counter
+        }).catch((err) => {
           console.log(`error saving file: ${err}`);
         })
       }
     })
 }
 
+let options = (page) => {
+  return {
+    url: `https://api.imgur.com/3/gallery/search/top/{{window}}/${page}/`,
+    qs: { q_type: 'jpg', q: 'cute kitten' },
 
-getImages();
+    headers: {
+      Authorization: `Client-ID ce6360e2634f0e7`
+    }
+
+  };
+};
+
+let paginateCats = (pageCount) => {
+  let page = 1;
+  var counter
+  while (page < pageCount) {
+    rp(options(page))
+      .then((val) => {
+        val = JSON.parse(val)
+        writeImagesToFile(val);
+      })
+      .catch((err) => {
+        console.log(`error: ${err}`);
+      })
+      page++
+  }
+}
+
+
+
+paginateCats(25);
 
 

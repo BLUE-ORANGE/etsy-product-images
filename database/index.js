@@ -6,9 +6,8 @@ let sqlz = new Sequelize('etsy-scratch', 'student', 'student', {
 });
 
 const ProductImageUrl = sqlz.define('productimageurl', {
-  imgurHash: Sequelize.STRING,
-  imageTitle: Sequelize.STRING,
-  imageUrl: Sequelize.STRING
+  imageUrl: Sequelize.STRING,
+  productId: Sequelize.INTEGER
 }, {
   schema: 'public'
 });
@@ -23,6 +22,19 @@ let getImageById = (id, cb) => {
    cb(err, null);
   });
 }
+
+let getImagesForProduct = (id) => {
+  return ProductImageUrl.findAll({
+    where: {
+      productId: id
+    }
+  }).then((data) => {
+    return data;
+  }).catch((error) => {
+    return error;
+  })
+}
+
 let getFiveImages = (cb) => {
   ProductImageUrl.findAll({
     where: {
@@ -41,3 +53,4 @@ let getFiveImages = (cb) => {
 
 module.exports.getFive = getFiveImages;
 module.exports.getImageById = getImageById;
+module.exports.getImagesForProduct = getImagesForProduct;

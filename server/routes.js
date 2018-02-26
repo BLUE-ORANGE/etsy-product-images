@@ -15,6 +15,18 @@ router.get('/:id/images', (req, res) => {
     })
   }
 });
-
+router.get('/:id', (req, res) => {
+  var id = req.params.id;
+  if (id) {
+    db.getImagesForProduct(id)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.statusCode = 404;
+      res.send(err);
+    })
+  }
+});
 
 module.exports = router;

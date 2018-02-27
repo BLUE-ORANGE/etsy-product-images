@@ -1,7 +1,8 @@
 import React from 'react';
 
 const ForwardButton = props => (
-  <button {...props}>Next</button>
+  <button {...props} />
+  // ▻
 );
 
 export default ForwardButton;

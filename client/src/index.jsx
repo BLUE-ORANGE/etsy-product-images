@@ -37,19 +37,20 @@ class App extends React.Component {
     const settings = {
       dots: true,
       arrows: true,
-      infinite: false,
-      // speed: 500,
+      infinite: true,
+      fade: true,
       dotsClass: 'slick-thumb slick-dots',
       focusOnSelect: true,
-      // centerMode: true,
-      // centerPadding: '200px',
+      useCSS: false,
       customPaging(i) {
-        return <img src={this.children[i].ref} alt="random cat" style={{ width: '75px', ' height': '50px' }} />;
+        return <img src={this.children[i].ref} alt="random cat" style={{ width: '30px', ' height': '30px' }} />;
       },
     };
 
     return (
       <div style={{ marginLeft: 'auto', marginRight: 'auto', width: '560px', maxHeight: '610px' }}>
+
+
         <Slider {...settings} prevArrow={prevBtn} nextArrow={nextBtn}>
           {
           this.state.images.map(image => (

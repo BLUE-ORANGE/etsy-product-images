@@ -12,7 +12,7 @@ class App extends React.Component {
       images: [],
     };
     this.max = 200;
-    this.getImages(this.getRandomInt(200));
+    this.getImages(this.getRandomInt());
   }
 
   getRandomInt() {

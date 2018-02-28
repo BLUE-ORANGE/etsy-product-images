@@ -49,7 +49,13 @@ class App extends React.Component {
     };
 
     return (
-      <div style={{ marginLeft: 'auto', marginRight: 'auto', width: '560px', maxHeight: '610px' }}>
+      <div style={{
+         marginLeft: 'auto',
+         marginRight: 'auto',
+         width: '560px',
+         maxHeight: '610px',
+         }}
+      >
 
 
         <Slider {...settings} prevArrow={prevBtn} nextArrow={nextBtn}>

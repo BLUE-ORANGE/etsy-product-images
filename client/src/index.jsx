@@ -11,11 +11,12 @@ class App extends React.Component {
     this.state = {
       images: [],
     };
+    this.max = 200;
     this.getImages(this.getRandomInt(200));
   }
 
-  getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
+  getRandomInt() {
+    return Math.floor(Math.random() * Math.floor(this.max));
   }
 
   getImages(id) {

@@ -13,7 +13,7 @@ test('App renders images upon load', () => {
 });
 
 test('Should have a forward button', () => {
-  const main = shallow(<Slider />);
+  const main = shallow(<ForwardButton />);
 
   expect(main.exists()).toEqual(true);
 });

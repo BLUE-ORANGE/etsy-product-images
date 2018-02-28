@@ -2,10 +2,14 @@
     position: relative;
     display: inline-block;
     /* width: 20px; */
-    height: 20px;
-    margin: 0 5px;
+    height: 33px;
+    margin: 0 7px;
     padding: 0;
     cursor: pointer;
+}
+
+.thumb-default {
+    opacity: 0.6
 }
 
 .slick-prev,
@@ -47,6 +51,7 @@
 
 .slick-loading .slick-list {
     background: #fff url('./ajax-loader.gif') center center no-repeat;
+    width: 505px;
 }
 
 /* Icons */
@@ -59,46 +64,7 @@
     src: url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/fonts/slick.eot?#iefix') format('embedded-opentype'), url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/fonts/slick.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/fonts/slick.ttf') format('truetype'), url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/fonts/slick.svg#slick') format('svg');
 }
 
-/* Arrows */
 
-/* .slick-prev,
-.slick-next {
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    cursor: pointer;
-    color: transparent;
-    border: none;
-    outline: none;
-    background: transparent;
-} */
-/* .slick-prev,
-.slick-next {
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    cursor: pointer;
-    color: transparent;
-    border: none;
-    outline: none;
-    background: transparent;
-} */
 
 
 .slick-prev:hover,
@@ -174,7 +140,6 @@
 }
 
 .slick-dots {
-    position: absolute;
     bottom: -25px;
     display: block;
     width: 100%;
@@ -235,7 +200,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.slick-dots li.slick-active button:before {
-    opacity: .75;
+.slick-dots li.slick-active img {
+    opacity: 1;
     color: black;
+}
+.dot-style {
+    margin-top: 7px;
 }

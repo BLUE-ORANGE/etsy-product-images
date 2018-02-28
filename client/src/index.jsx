@@ -31,6 +31,7 @@ class App extends React.Component {
       },
     });
   }
+  
 
   render() {
     const nextBtn = <ForwardButton />;
@@ -40,11 +41,11 @@ class App extends React.Component {
       arrows: true,
       infinite: true,
       fade: true,
-      dotsClass: 'slick-thumb slick-dots',
+      dotsClass: 'slick-thumb slick-dots dot-style',
       focusOnSelect: true,
       useCSS: false,
       customPaging(i) {
-        return <img src={this.children[i].ref} alt="random cat" style={{ width: '30px', ' height': '30px' }} />;
+        return <img src={this.children[i].ref} alt="random cat" className="thumb-default" style={{ width: '30px', height: '30px' }} />;
       },
     };
 
@@ -62,7 +63,7 @@ class App extends React.Component {
           {
           this.state.images.map(image => (
             <div key={image.id} ref={image.imageUrl}>
-              <img alt="random cat" src={image.imageUrl} style={{ width: '560px', maxHeight: '560px' }} />
+              <img alt="random cat" src={image.imageUrl} style={{ width: '570px', height: '505px' }} />
             </div>
             ))
         }

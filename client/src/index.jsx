@@ -45,7 +45,7 @@ class App extends React.Component {
       focusOnSelect: true,
       useCSS: false,
       customPaging(i) {
-        return <img src={this.children[i].ref} alt="random cat" className="thumb-default" style={{ width: '30px', ' height': '30px' }} />;
+        return <img src={this.children[i].ref} alt="random cat" className="thumb-default" style={{ width: '30px', height: '30px' }} />;
       },
     };
 

@@ -8,6 +8,10 @@
     cursor: pointer;
 }
 
+.thumb-default {
+    opacity: 0.6
+}
+
 .slick-prev,
 .slick-next {
     /* border-radius: 0 3px 3px 0; */
@@ -235,7 +239,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.slick-dots li.slick-active button:before {
-    opacity: .75;
+.slick-dots li.slick-active img {
+    opacity: 1;
     color: black;
 }

@@ -43,7 +43,7 @@
     -moz-font-feature-settings: "liga";
     font-feature-settings: "liga";
     color: #F2F1F1;
-    /* background: #97928F; */
+    background: #97928F;
     opacity: 0.8;
 
 }
@@ -101,7 +101,7 @@
 
 .slick-prev:before,
 .slick-next:before {
-    font-family: "SSStandard"
+    /* font-family: "SSStandard"; */
     font-size: 20px;
     line-height: 86px;
     opacity: .75;
@@ -131,7 +131,7 @@
 }
 
 .slick-next {
-    right: -2px;
+    right: -1px;
 }
 
 [dir='rtl'] .slick-next {

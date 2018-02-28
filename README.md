@@ -77,4 +77,19 @@ yarn install
 ```
 
 
+### Seeding Database
+
+Requirements:
+- [postgres](https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb)
+  - create a db user student / student
+
+- Install dependencies:
+```
+yarn install
+```
+- Seed database:
+```
+ node seedDatabase.js
+```
+
 

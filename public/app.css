@@ -1,3 +1,5 @@
+@charset 'UTF-8';
+
 .slick-dots li {
     position: relative;
     display: inline-block;
@@ -48,7 +50,7 @@
 
 }
 
-@charset 'UTF-8';
+
 /* Slider */
 
 .slick-loading .slick-list {
@@ -57,6 +59,16 @@
 }
 
 /* Icons */
+@font-face {
+    font-family: "SSStandard";
+    src: url('ss-standard.eot');
+    src: url('/fonts/ss-standard.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/ss-standard.woff') format('woff'),
+         url('/fonts/ss-standard.ttf')  format('truetype'),
+         url('/fonts/ss-standard.svg#SSStandard') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
 
 @font-face {
     font-family: 'slick';
@@ -65,16 +77,6 @@
     src: url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/fonts/slick.eot');
     src: url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/fonts/slick.eot?#iefix') format('embedded-opentype'), url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/fonts/slick.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/fonts/slick.ttf') format('truetype'), url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/fonts/slick.svg#slick') format('svg');
 }
-@font-face {
-    font-family: "SSStandard";
-    src: font-url('./fonts/ss-standard.eot');
-    src: font-url('./fonts/ss-standard.eot?#iefix') format('embedded-opentype'),
-         font-url('./fonts/ss-standard.woff') format('woff'),
-         font-url('./fonts/ss-standard.ttf')  format('truetype'),
-         font-url('./fonts/ss-standard.svg#SSStandard') format('svg');
-    font-weight: normal;
-    font-style: normal;
-  }
 
 
 
@@ -131,7 +133,7 @@
 }
 
 .slick-next {
-    right: -1px;
+    right: 0px;
 }
 
 [dir='rtl'] .slick-next {

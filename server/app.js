@@ -16,11 +16,11 @@ const morgan = require('morgan');
 app.use(morgan('combined'));
 
 app.use(express.static('public'));
-app.use(fonts({
-  csspath: '/css',
-  fontspath: '/fonts',
-  fontsdir: './fonts',
-}));
+// app.use(fonts({
+//   csspath: '/css',
+//   fontspath: '/fonts',
+//   fontsdir: './fonts',
+// }));
 app.use(jsonParser);
 app.use('/v1/product', route);
 

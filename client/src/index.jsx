@@ -55,7 +55,7 @@ class App extends React.Component {
          marginLeft: 'auto',
          marginRight: 'auto',
          width: '560px',
-         maxHeight: '610px',
+         height: '610px',
          }}
       >
 
@@ -64,7 +64,7 @@ class App extends React.Component {
           {
           this.state.images.map(image => (
             <div key={image.id} ref={image.imageUrl}>
-              <img alt="random cat" src={image.imageUrl} style={{ width: '570px', height: '505px' }} />
+              <img alt="random cat" src={image.imageUrl} style={{ 'object-fit': 'scale-down', height: '610px', width: '560px', marginLeft: 'auto', marginRight: 'auto', 'background-color': '#F2F1F1' }} />
             </div>
             ))
         }

@@ -69,7 +69,9 @@ class App extends React.Component {
                 alt="random cat"
                 src={image.imageUrl}
                 style={{
-                 marginLeft: 'auto', marginRight: 'auto', maxWidth: '570px', maxHeight: '505px',
+                  objectFit: 'cover',
+                  width: '570px',
+                  height: '505px',
                 }}
               />
             </div>

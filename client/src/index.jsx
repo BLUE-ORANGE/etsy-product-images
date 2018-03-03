@@ -5,6 +5,7 @@ import $ from 'jquery';
 import ForwardButton from './components/ForwardButton';
 import BackButton from './components/BackButton';
 import ImageCarousel from './components/ImageCarousel';
+import CarouselNavigation from './components/CarouselNavigation';
 
 class App extends React.Component {
   constructor(props) {
@@ -64,7 +65,13 @@ class App extends React.Component {
           {
           this.state.images.map(image => (
             <div key={image.id} ref={image.imageUrl}>
-              <img alt="random cat" src={image.imageUrl} style={{ 'object-fit': 'scale-down', height: '610px', width: '560px', marginLeft: 'auto', marginRight: 'auto', 'background-color': '#F2F1F1' }} />
+              <img
+                alt="random cat"
+                src={image.imageUrl}
+                style={{
+                'object-fit': 'scale-down', height: '610px', width: '560px', marginLeft: 'auto', marginRight: 'auto', 'background-color': '#F2F1F1',
+                }}
+              />
             </div>
             ))
         }
@@ -72,6 +79,11 @@ class App extends React.Component {
         <div>
           {
           this.state.images.length > 0 ? <ImageCarousel activeImage={this.state.images[0].imageUrl} /> : ''
+          }
+        </div>
+        <div>
+          {
+            this.state.images.length > 0 ? <CarouselNavigation images={this.state.images} /> : ''
           }
         </div>
       </div>

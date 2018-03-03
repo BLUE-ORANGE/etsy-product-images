@@ -35,6 +35,7 @@ class App extends React.Component {
   }
 
 
+
   render() {
     const nextBtn = <ForwardButton />;
     const prevBtn = <BackButton />;
@@ -83,7 +84,7 @@ class App extends React.Component {
         </div>
         <div>
           {
-            this.state.images.length > 0 ? <CarouselNavigation images={this.state.images} /> : ''
+            <CarouselNavigation images={this.state.images} />
           }
         </div>
       </div>

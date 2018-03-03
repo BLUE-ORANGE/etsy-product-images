@@ -1,4 +1,5 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 
 const CarouselNavigation = props => (
   <ul className="slick-dots">
@@ -12,7 +13,7 @@ const CarouselNavigation = props => (
       })
     }
   </ul>
-
 );
+
 
 export default CarouselNavigation;

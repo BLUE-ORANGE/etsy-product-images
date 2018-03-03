@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import $ from 'jquery';
 import ForwardButton from './components/ForwardButton';
 import BackButton from './components/BackButton';
+import ZoomButton from './components/ZoomButton';
 
 class App extends React.Component {
   constructor(props) {
@@ -42,8 +43,6 @@ class App extends React.Component {
       fade: true,
       dotsClass: 'slick-thumb slick-dots dot-style',
       focusOnSelect: true,
-
-      // className: 'image-container',
       useCSS: true,
       customPaging(i) {
         return <img src={this.children[i].ref} alt="random cat" className="thumb-default" style={{ width: '30px', height: '30px' }} />;
@@ -78,6 +77,7 @@ class App extends React.Component {
             ))
         }
         </Slider>
+        <ZoomButton />
       </div>
     );
   }

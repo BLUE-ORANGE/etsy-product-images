@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import $ from 'jquery';
 import ForwardButton from './components/ForwardButton';
 import BackButton from './components/BackButton';
+import ImageCarousel from './components/ImageCarousel';
 
 class App extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class App extends React.Component {
       },
     });
   }
-  
+
 
   render() {
     const nextBtn = <ForwardButton />;
@@ -68,6 +69,11 @@ class App extends React.Component {
             ))
         }
         </Slider>
+        <div>
+          {
+          this.state.images.length > 0 ? <ImageCarousel activeImage={this.state.images[0].imageUrl} /> : ''
+          }
+        </div>
       </div>
     );
   }

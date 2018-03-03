@@ -207,3 +207,7 @@
 .dot-style {
     margin-top: 7px;
 }
+
+img[class] {
+    width: 100%;
+}

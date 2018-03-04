@@ -3,6 +3,8 @@ import React from 'react';
 const ImageCarousel = (props) => {
   let image = props.images.filter(img => img.focused === true);
   image = image[0].imageUrl;
+  const componentClasses = ['carousel-image'];
+  componentClasses.push('show');
   return (
     <div>
       <img
@@ -14,7 +16,9 @@ const ImageCarousel = (props) => {
           marginLeft: 'auto',
           marginRight: 'auto',
           backgroundColor: '#F2F1F1',
+          borderRadius: '3px',
         }}
+        className={componentClasses.join(' ')}
         src={image}
       />
     </div>

@@ -15,6 +15,7 @@ class App extends React.Component {
     };
     this.max = 200;
     this.getImages(this.getRandomInt());
+    this.handleClickThumbnail = this.handleClickThumbnail.bind(this);
   }
 
   getRandomInt() {
@@ -39,6 +40,17 @@ class App extends React.Component {
           this.setState({ images });
         }
       },
+    });
+  }
+
+  handleClickThumbnail(image) {
+    const images = this.state.images.slice();
+    images.map((img, i) => {
+      image === i ? img.focused = true : img.focused = false;
+      return img;
+    });
+    this.setState({
+      images,
     });
   }
 
@@ -83,7 +95,7 @@ class App extends React.Component {
         </div>
         <div>
           {
-            <CarouselNavigation images={this.state.images} />
+            <CarouselNavigation images={this.state.images} clickHandler={this.handleClickThumbnail} />
           }
         </div>
       </div>

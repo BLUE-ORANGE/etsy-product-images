@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Slider from 'react-slick';
 import $ from 'jquery';
 import ForwardButton from './components/ForwardButton';
 import BackButton from './components/BackButton';

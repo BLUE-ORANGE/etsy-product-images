@@ -53,6 +53,17 @@ class App extends React.Component {
     });
   }
 
+  handleClickPrev() {
+    const imageState = this.state.images.slice();
+    const oldFocused = imageState.find(img => img.focused);
+    const focusedIndex = imageState.indexOf(oldFocused);
+    imageState[focusedIndex].focused = false;
+    imageState[focusedIndex - 1 < 0 ? imageState.length - 1 : focusedIndex - 1].focused = true;
+    this.setState({
+      images: imageState,
+    });
+  }
+
   render() {
     return (
       <div style={{
@@ -63,7 +74,7 @@ class App extends React.Component {
          }}
       >
         <div>
-          <BackButton className="slick-prev" />
+          <BackButton className="slick-prev" onClick={() => this.handleClickPrev()} />
           {
           this.state.images.length > 0 ?
             <ImageCarousel images={this.state.images} /> : ''

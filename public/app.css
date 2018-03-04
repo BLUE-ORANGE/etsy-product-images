@@ -23,7 +23,7 @@
 .image-arrow-box-container,
 .slick-prev,
 .slick-next {
-    position: absolute;
+
     top: 0%;
     height: 100%;
     line-height: 86px;
@@ -171,7 +171,7 @@
     padding-right: 0px;
     padding-top: 0px;
     position: absolute;
-    right: 0px;
+    right: 241px;
     text-align: center;
     text-decoration-color: rgb(242, 241, 241);
     text-decoration-line: none;
@@ -425,13 +425,10 @@
     font-family: "SSStandard"
 }
 
-.slick-next {
-    right: 0px;
-}
 
 [dir='rtl'] .slick-next {
-    right: auto;
-    left: -25px;
+    /* right: auto;
+    left: -25px; */
 }
 
 .slick-next:before {

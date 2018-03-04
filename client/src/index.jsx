@@ -100,7 +100,10 @@ class App extends React.Component {
         </div>
         <div>
           {
-            <CarouselNavigation images={this.state.images} clickHandler={this.handleClickThumbnail} />
+            <CarouselNavigation
+              images={this.state.images}
+              clickHandler={this.handleClickThumbnail}
+            />
           }
         </div>
         <ZoomButton />

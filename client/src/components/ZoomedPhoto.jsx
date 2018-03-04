@@ -1,4 +1,5 @@
 import React from 'react';
+import { Lightbox } from 'react-modal-image';
 
 const ZoomedPhoto = props => (
 

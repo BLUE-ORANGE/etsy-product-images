@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BackButton = (props) => {
+const BackButton = props =>
   // const { className, style, onClick } = props;
   return (
     // <div>
@@ -10,7 +10,6 @@ const BackButton = (props) => {
     // </div>
     <button {...props} />
     // ◅
-  );
-};
 
+  );
 export default BackButton;

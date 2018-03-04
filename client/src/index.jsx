@@ -5,6 +5,8 @@ import ForwardButton from './components/ForwardButton';
 import BackButton from './components/BackButton';
 import ImageCarousel from './components/ImageCarousel';
 import CarouselNavigation from './components/CarouselNavigation';
+import ZoomButton from './components/ZoomButton';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -42,6 +44,7 @@ class App extends React.Component {
     });
   }
 
+
   handleClickThumbnail(image) {
     const images = this.state.images.slice();
     images.map((img, i) => {
@@ -64,6 +67,7 @@ class App extends React.Component {
     });
   }
 
+
   handleClickPrev() {
     const imageState = this.state.images.slice();
     const oldFocused = imageState.find(img => img.focused);
@@ -77,11 +81,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div style={{
+      <div
+        style={{
          marginLeft: 'auto',
          marginRight: 'auto',
          width: '560px',
-         height: '610px',
+         height: '509px',
+
          }}
       >
         <div>
@@ -97,6 +103,8 @@ class App extends React.Component {
             <CarouselNavigation images={this.state.images} clickHandler={this.handleClickThumbnail} />
           }
         </div>
+        <ZoomButton />
+
       </div>
     );
   }

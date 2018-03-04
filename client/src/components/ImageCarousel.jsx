@@ -1,9 +1,8 @@
 import React from 'react';
 
 const ImageCarousel = (props) => {
-  const image = props.images.filter(img => img.focused === true);
-
-  console.log(image);
+  let image = props.images.filter(img => img.focused === true);
+  image = image[0].imageUrl;
   return (
     <div>
       <img
@@ -16,7 +15,7 @@ const ImageCarousel = (props) => {
           marginRight: 'auto',
           backgroundColor: '#F2F1F1',
         }}
-        src={image[0].imageUrl}
+        src={image}
       />
     </div>
   );

@@ -28,30 +28,32 @@ class App extends React.Component {
       contentType: 'application/json',
       success: (data) => {
         if (data) {
-          this.setState({ images: data.results });
+          const images = data.results.map((image, i) => {
+            if (i === 0) {
+              image.focused = true;
+            } else {
+              image.focused = false;
+            }
+            return image;
+          });
+          this.setState({ images });
         }
       },
     });
   }
 
-
+  handleClickNext() {
+    const imageState = this.state.images.slice();
+    const oldFocused = imageState.find(img => img.focused);
+    const focusedIndex = imageState.indexOf(oldFocused);
+    imageState[focusedIndex].focused = false;
+    imageState[focusedIndex + 1 > imageState.length - 1 ? 0 : focusedIndex + 1].focused = true;
+    this.setState({
+      images: imageState,
+    });
+  }
 
   render() {
-    const nextBtn = <ForwardButton />;
-    const prevBtn = <BackButton />;
-    const settings = {
-      dots: true,
-      arrows: true,
-      infinite: true,
-      fade: true,
-      dotsClass: 'slick-thumb slick-dots dot-style',
-      focusOnSelect: true,
-      useCSS: false,
-      customPaging(i) {
-        return <img src={this.children[i].ref} alt="random cat" className="thumb-default" style={{ width: '30px', height: '30px' }} />;
-      },
-    };
-
     return (
       <div style={{
          marginLeft: 'auto',
@@ -60,27 +62,13 @@ class App extends React.Component {
          height: '610px',
          }}
       >
-
-
-        <Slider {...settings} prevArrow={prevBtn} nextArrow={nextBtn}>
-          {
-          this.state.images.map(image => (
-            <div key={image.id} ref={image.imageUrl}>
-              <img
-                alt="random cat"
-                src={image.imageUrl}
-                style={{
-                'object-fit': 'scale-down', height: '610px', width: '560px', marginLeft: 'auto', marginRight: 'auto', 'background-color': '#F2F1F1',
-                }}
-              />
-            </div>
-            ))
-        }
-        </Slider>
         <div>
+          <BackButton className="slick-prev" />
           {
-          this.state.images.length > 0 ? <ImageCarousel activeImage={this.state.images[0].imageUrl} /> : ''
+          this.state.images.length > 0 ?
+            <ImageCarousel images={this.state.images} /> : ''
           }
+          <ForwardButton className="slick-next" onClick={() => this.handleClickNext()} />
         </div>
         <div>
           {

@@ -4,11 +4,15 @@ import React from 'react';
 const CarouselNavigation = props => (
   <ul className="slick-dots">
     {
-      props.images.map((image, ind) => {
+      props.images.map((image) => {
         return (
-          <li key={image}>
-            <img src={image.imageUrl} alt="random cat" className="thumb-default" style={{ width: '30px', height: '30px' }} />
-          </li>
+          image.focused ?
+            <li key={image}>
+              <img src={image.imageUrl} alt="random cat" style={{ width: '30px', height: '30px' }} />
+            </li> :
+            <li key={image}>
+              <img src={image.imageUrl} alt="random cat" className="thumb-default " style={{ width: '30px', height: '30px' }} />
+            </li>
         );
       })
     }

@@ -10,7 +10,6 @@ const BackButton = (props) => {
     // </div>
     <button {...props} />
     // ◅
-    
   );
 };
 

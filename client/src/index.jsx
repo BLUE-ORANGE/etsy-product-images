@@ -96,7 +96,8 @@ class App extends React.Component {
           this.state.images.length > 0 ?
             <ImageCarousel images={this.state.images} /> : ''
           }
-          <ForwardButton className="slick-next" onClick={() => this.handleClickNext()} />
+
+          <ForwardButton onClick={() => this.handleClickNext()} />
         </div>
         <div>
           {
@@ -106,7 +107,7 @@ class App extends React.Component {
             />
           }
         </div>
-        <ZoomButton />
+        <ZoomButton image={this.state.images.slice().filter(x => x.focused)[0]} />
 
       </div>
     );

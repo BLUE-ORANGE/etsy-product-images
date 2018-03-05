@@ -1,8 +1,6 @@
 const express = require('express');
-const fonts = require('express-fonts');
-
 const bodyParser = require('body-parser');
-
+const cors = require('cors');
 const jsonParser = bodyParser.json();
 const db = require('../database/index.js');
 const route = require('./routes.js');
@@ -21,9 +19,9 @@ app.use(express.static('public'));
 //   fontspath: '/fonts',
 //   fontsdir: './fonts',
 // }));
+app.use(cors());
 app.use(jsonParser);
 app.use('/v1/product', route);
-
 
 app.get('/image', (req, res) => {
   db.getFive((err, data) => {

@@ -11,7 +11,7 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     backgroundColor: 'grey',
-  }
+  },
 };
 class ZoomButton extends React.Component {
   constructor(props) {
@@ -30,12 +30,9 @@ class ZoomButton extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="zoom" style={{ float: 'right' }} aria-role="image-expand" onClick={e => this.handleClick(e)}>
-          <span className="ss-icon">🔎</span>zoom
-        </div>
-        <div>
-          {
+      <a className="zoom" id="zoom" style={{ float: 'right' }} aria-role="image-expand" onClick={e => this.handleClick(e)}>
+        <span className="ss-icon">🔎</span>zoom
+        {
 
           this.state.displayZoom && (
             <Lightbox
@@ -49,8 +46,8 @@ class ZoomButton extends React.Component {
 
           )
         }
-        </div>
-      </div>
+      </a>
+
     );
   }
 }

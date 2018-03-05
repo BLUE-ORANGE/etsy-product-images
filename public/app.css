@@ -2,13 +2,19 @@
 
 
 #image-right-arrow-container {
-    right: 25%;
+    float: right;
 }
 #image-right-arrow {
     border-radius: 3px 0 0 3px;
-
 }
-
+.image-footer {
+    text-align: center;
+    margin: 7px 0 0;
+    min-height: 20px;
+}
+.image-footer .zoom {
+    margin-top: -4px;
+}
 
 .carousel-image:before {
 
@@ -106,7 +112,6 @@
     margin-bottom: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    margin-top: -40px;
     opacity: 0.4;
     padding-bottom: 0px;
     padding-left: 0px;
@@ -195,7 +200,7 @@
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 0px;
-    position: absolute;
+    position: sticky;
     text-align: center;
     text-decoration-color: rgb(242, 241, 241);
     text-decoration-line: none;
@@ -224,7 +229,6 @@
 /* Slider */
 
 .slick-loading {
-    background: #fff url('./ajax-loader.gif') center center no-repeat;
     width: 505px;
     background-color: rgb(245, 245, 241);
     box-shadow: rgb(0, 0, 0) 0px 0px 40px -25px inset;
@@ -432,12 +436,12 @@
 
 .slick-prev:before {
     line-height: 86px;
-    content: '◅';
+    content: '\25C5';
     font-family: "SSStandard"
 }
 
 [dir='rtl'] .slick-prev:before {
-    content: '▻';
+    content: '\25BB';
     font-family: "SSStandard"
 }
 
@@ -448,12 +452,12 @@
 }
 
 .slick-next:before {
-    content: '▻';
+    content: '\25BB';
 }
 
 [dir='rtl'] .slick-next:before {
     line-height: 86px;
-    content: '◅';
+    content: '\25C5';
 }
 
 /* Dots */
@@ -483,7 +487,7 @@
 }
 
 .slick-dots li button {
-    font-size: 0;
+    /* font-size: 0;
     line-height: 0;
     display: block;
     width: 20px;
@@ -493,7 +497,10 @@
     color: transparent;
     border: 0;
     outline: none;
-    background: transparent;
+    background: transparent; */
+    display: inline-block;
+    height: 30px;
+    margin-left: 75px;
 }
 
 .slick-dots li button:hover,
@@ -515,7 +522,7 @@
     left: 0;
     width: 20px;
     height: 20px;
-    content: '•';
+    content: '\2022';
     text-align: center;
     opacity: .25;
     color: black;
@@ -571,4 +578,18 @@ img[class] {
     }
     .zoom {
         font-family: "Graphik Web";
+        margin-top: -4px;
+        color: #999999;
+        float: right;
+        font-size: 14px;
+        padding-left: 20px;
+        text-decoration: none;
+        transition: all 0.15s ease;
+        -webkit-transition: all 0.15s ease;
+    }
+    .zoom .ss-icon {
+        font-size: 16px;
+        margin-right: 4px;
+        position: relative;
+        top: 3px;
     }

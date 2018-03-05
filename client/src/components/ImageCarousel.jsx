@@ -14,8 +14,6 @@ const ImageCarousel = (props) => {
           objectFit: 'scale-down',
           height: '456px',
           width: '570px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
           backgroundColor: '#F2F1F1',
           borderRadius: '3px',
         }}

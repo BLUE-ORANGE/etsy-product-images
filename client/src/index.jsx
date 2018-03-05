@@ -6,7 +6,7 @@ import BackButton from './components/BackButton';
 import ImageCarousel from './components/ImageCarousel';
 import CarouselNavigation from './components/CarouselNavigation';
 import ZoomButton from './components/ZoomButton';
-
+import styles from '../../public/app.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -83,9 +83,9 @@ class App extends React.Component {
     return (
       <div
         style={{
-         marginLeft: 'auto',
-         marginRight: 'auto',
-         width: '560px',
+         margin: '0px',
+         padding: '0px',
+         width: '570px',
          height: '456px',
 
          }}
@@ -98,20 +98,21 @@ class App extends React.Component {
             <ImageCarousel images={this.state.images} /> : ''
           }
         </div>
-        <div>
-          {
-            <CarouselNavigation
-              images={this.state.images}
-              clickHandler={this.handleClickThumbnail}
-            />
-          }
+        <div className="image-footer">
+
+          <CarouselNavigation
+            images={this.state.images}
+            clickHandler={this.handleClickThumbnail}
+          />
+          <ZoomButton image={this.state.images.slice().filter(x => x.focused)[0]} />
+
+
         </div>
-        <ZoomButton image={this.state.images.slice().filter(x => x.focused)[0]} />
 
       </div>
     );
   }
 }
 
-export default ReactDOM.render(<App />, document.getElementById('app') || document.createElement('div'));
+export default ReactDOM.render(<App />, document.getElementById('app'));
 

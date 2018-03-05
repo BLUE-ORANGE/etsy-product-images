@@ -4,17 +4,16 @@ import React from 'react';
 const CarouselNavigation = props => (
   <ul className="slick-dots">
     {
-      props.images.map((image, i) => {
-        return (
+      props.images.map((image, i) =>
+        (
           image.focused ?
             <li key={image[i]} onClick={() => props.clickHandler(i)}>
-              <img src={image.imageUrl} alt="random cat" style={{ width: '30px', height: '30px' }} />
+              <img src={image.imageUrl} alt="random cat" style={{ width: '30px', height: '30px', borderRadius: '3px' }} />
             </li> :
-            <li key={image[i]}  onClick={() => props.clickHandler(i)}>
-              <img src={image.imageUrl} alt="random cat" className="thumb-default" style={{ width: '30px', height: '30px' }} />
+            <li key={image[i]} onClick={() => props.clickHandler(i)}>
+              <img src={image.imageUrl} alt="random cat" className="thumb-default" style={{ width: '30px', height: '30px', borderRadius: '3px' }} />
             </li>
-        );
-      })
+        ))
     }
   </ul>
 );

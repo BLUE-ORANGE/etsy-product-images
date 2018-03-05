@@ -1,16 +1,23 @@
 import React from 'react';
-import { ModalImage, Lightbox } from 'react-modal-image';
-import ZoomedPhoto from './ZoomedPhoto';
+import { Lightbox } from 'react-modal-image';
 
-const closeLightBox = () => {
-  this.state.open = true;
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: 'grey',
+  }
 };
 class ZoomButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       displayZoom: false,
-      imageUrl: 'https://i.imgur.com/ZgZ8YKN.jpg',
     };
   }
 
@@ -24,7 +31,7 @@ class ZoomButton extends React.Component {
   render() {
     return (
       <div>
-        <div className="zoom" style={{ float: 'right' }} onClick={e => this.handleClick(e)}>
+        <div className="zoom" style={{ float: 'right' }} aria-role="image-expand" onClick={e => this.handleClick(e)}>
           <span className="ss-icon">🔎</span>zoom
         </div>
         <div>
@@ -32,8 +39,9 @@ class ZoomButton extends React.Component {
 
           this.state.displayZoom && (
             <Lightbox
-              medium={this.state.imageUrl}
-              large={this.state.imageUrl}
+
+              medium={this.props.image.imageUrl}
+              large={this.props.image.imageUrl}
               onClose={() => this.setState({
               displayZoom: false,
             })}

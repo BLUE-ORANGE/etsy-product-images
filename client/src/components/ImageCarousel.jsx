@@ -1,4 +1,5 @@
 import React from 'react';
+import ForwardButton from './ForwardButton';
 
 const ImageCarousel = (props) => {
   let image = props.images.filter(img => img.focused === true);
@@ -11,8 +12,8 @@ const ImageCarousel = (props) => {
         alt="cat"
         style={{
           objectFit: 'scale-down',
-          height: '610px',
-          width: '560px',
+          height: '456px',
+          width: '570px',
           marginLeft: 'auto',
           marginRight: 'auto',
           backgroundColor: '#F2F1F1',

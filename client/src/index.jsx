@@ -86,18 +86,17 @@ class App extends React.Component {
          marginLeft: 'auto',
          marginRight: 'auto',
          width: '560px',
-         height: '509px',
+         height: '456px',
 
          }}
       >
         <div>
           <BackButton className="slick-prev" onClick={() => this.handleClickPrev()} />
+          <ForwardButton onClick={() => this.handleClickNext()} />
           {
           this.state.images.length > 0 ?
             <ImageCarousel images={this.state.images} /> : ''
           }
-
-          <ForwardButton onClick={() => this.handleClickNext()} />
         </div>
         <div>
           {

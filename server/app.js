@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+
 const jsonParser = bodyParser.json();
 const db = require('../database/index.js');
 const route = require('./routes.js');
@@ -14,11 +15,7 @@ const morgan = require('morgan');
 app.use(morgan('combined'));
 
 app.use(express.static('public'));
-// app.use(fonts({
-//   csspath: '/css',
-//   fontspath: '/fonts',
-//   fontsdir: './fonts',
-// }));
+
 app.use(cors());
 app.use(jsonParser);
 app.use('/v1/product', route);

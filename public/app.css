@@ -1,4 +1,29 @@
 @charset 'UTF-8';
+
+
+#image-right-arrow-container {
+    right: 25%;
+}
+#image-right-arrow {
+    border-radius: 3px 0 0 3px;
+
+}
+
+
+.carousel-image:before {
+
+    -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden; 
+  }
+
+  .carousel-image:after {
+    opacity: 1;
+    visibility: visible; 
+  }
 .slick-dots li {
     position: relative;
     display: inline-block;
@@ -20,7 +45,7 @@
     z-index: 1;
 }
 
-.image-arrow-box-container,
+
 .slick-prev,
 .slick-next {
 
@@ -96,7 +121,7 @@
     text-rendering: optimizeLegibility;
     text-shadow: none;
     text-transform: none;
-    top: 284px;
+    top: 228px;
     transition-delay: 0s;
     transition-duration: 0.1s;
     transition-property: all;
@@ -171,7 +196,6 @@
     padding-right: 0px;
     padding-top: 0px;
     position: absolute;
-    right: 241px;
     text-align: center;
     text-decoration-color: rgb(242, 241, 241);
     text-decoration-line: none;
@@ -180,7 +204,7 @@
     text-rendering: optimizeLegibility;
     text-shadow: none;
     text-transform: none;
-    top: 284px;
+    top: 228px;
     transition-delay: 0s;
     transition-duration: 0.1s;
     transition-property: all;
@@ -194,12 +218,7 @@
     -webkit-appearance: none;
     -webkit-font-smoothing: antialiased;
     -webkit-border-image: none;
-    -moz-font-feature-settings: "liga=1";
-    -moz-font-feature-settings: "liga";
-    font-feature-settings: "liga";
-    color: #F2F1F1;
-    background: #97928F;
-    opacity: 0.8;
+
 }
 
 /* Slider */
@@ -227,7 +246,7 @@
 
 @font-face {
     font-family: "Guardian-EgypTT";
-    src: url("/assets/type/Guardian-EgypTT-Semibold.woff2") format("woff2");
+    src: url("/fonts/Guardian-EgypTT-Semibold.woff2") format("woff2");
     font-style: normal;
     font-weight: 600;
     font-stretch: normal;
@@ -235,7 +254,7 @@
 
 @font-face {
     font-family: "Guardian-EgypTT";
-    src: url("/assets/type/Guardian-EgypTT-Medium.woff2") format("woff2");
+    src: url("/fonts/Guardian-EgypTT-Medium.woff2") format("woff2");
     font-style: normal;
     font-weight: 500;
     font-stretch: normal;
@@ -243,8 +262,7 @@
 
 @font-face {
     font-family: "Guardian-EgypTT";
-    src: url("/fonts/Guardian-EgypTT-Regular.eot");
-    src: url("/fonts/Guardian-EgypTT-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Guardian-EgypTT-Regular.woff2") format("woff2"), url("/fonts/Guardian-EgypTT-Regular.woff") format("woff"), url("/fonts/Guardian-EgypTT-Regular.ttf") format("truetype"), url("/fonts/Guardian-EgypTT-Regular.svg#Guardian EgypTT") format("svg");
+    src: url("/fonts/Guardian-EgypTT-Regular.woff2") format("woff2");
     font-style: normal;
     font-weight: 400;
     font-stretch: normal;
@@ -308,8 +326,8 @@
 
 @font-face {
     font-family: "Graphik Web";
-    src: url("/assets/type/Graphik-Regular-Web.eot");
-    src: url("/assets/type/Graphik-Regular-Web.eot?#iefix") format("embedded-opentype"), url("/assets/type/Graphik-Regular-Web.woff2") format("woff2"), url("/assets/type/Graphik-Regular-Web.woff") format("woff"), url("/assets/type/Graphik-Regular-Web.svg#Graphik-Regular-Web") format("svg"), url("/assets/type/Graphik-Regular-Web.ttf") format("opentype");
+    src: url("/fonts/Graphik-Regular-Web.eot");
+    src: url("/fonts/Graphik-Regular-Web.eot?#iefix") format("embedded-opentype"), url("/fonts/Graphik-Regular-Web.woff2") format("woff2"), url("/fonts/Graphik-Regular-Web.woff") format("woff"), url("/fonts/Graphik-Regular-Web.svg#Graphik-Regular-Web") format("svg"), url("/fonts/Graphik-Regular-Web.ttf") format("opentype");
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
@@ -317,8 +335,7 @@
 
 @font-face {
     font-family: "Graphik Web";
-    src: url("/assets/type/Graphik-Medium-Web.eot");
-    src: url("/assets/type/Graphik-Medium-Web.eot?#iefix") format("embedded-opentype"), url("/assets/type/Graphik-Medium-Web.woff2") format("woff2"), url("/assets/type/Graphik-Medium-Web.woff") format("woff"), url("/assets/type/Graphik-Medium-Web.svg#Graphik-Medium-Web") format("svg"), url("/assets/type/Graphik-Medium-Web.ttf") format("opentype");
+    src: url("/fonts/Graphik-Medium-Web.woff2") format("woff2");
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -326,8 +343,7 @@
 
 @font-face {
     font-family: "Graphik Web";
-    src: url("/assets/type/Graphik-Medium-Web.eot");
-    src: url("/assets/type/Graphik-Medium-Web.eot?#iefix") format("embedded-opentype"), url("/assets/type/Graphik-Medium-Web.woff2") format("woff2"), url("/assets/type/Graphik-Medium-Web.woff") format("woff"), url("/assets/type/Graphik-Medium-Web.svg#Graphik-Medium-Web") format("svg"), url("/assets/type/Graphik-Medium-Web.ttf") format("opentype");
+    src: url("/fonts/Graphik-Medium-Web.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
     font-stretch: normal;
@@ -335,8 +351,8 @@
 
 @font-face {
     font-family: "Graphik Web";
-    src: url("/assets/type/Graphik-Medium-Web.eot");
-    src: url("/assets/type/Graphik-Medium-Web.eot?#iefix") format("embedded-opentype"), url("/assets/type/Graphik-Medium-Web.woff2") format("woff2"), url("/assets/type/Graphik-Medium-Web.woff") format("woff"), url("/assets/type/Graphik-Medium-Web.svg#Graphik-Medium-Web") format("svg"), url("/assets/type/Graphik-Medium-Web.ttf") format("opentype");
+
+    src: url("/fonts/Graphik-Medium-Web.woff2") format("woff2");
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
@@ -346,7 +362,7 @@
 
 @font-face {
     font-family: "SSStandard";
-    src: url('ss-standard.eot');
+
     src: url('/fonts/ss-standard.eot?#iefix') format('embedded-opentype'), url('/fonts/ss-standard.woff') format('woff'), url('/fonts/ss-standard.ttf') format('truetype'), url('/fonts/ss-standard.svg#SSStandard') format('svg');
     font-weight: normal;
     font-style: normal;
@@ -510,6 +526,7 @@
 .slick-dots li.slick-active img {
     opacity: 1;
     color: black;
+    border-radius: 3px;
 }
 
 .dot-style {
@@ -519,7 +536,7 @@
 img[class] {
     width: 100%;
 }
-    .image-container,
+
     .slick-active,
     .slick-slide {
         background-color: rgb(245, 245, 241);
@@ -548,100 +565,7 @@ img[class] {
         justify-content: center;
         /* height: 100vh;  */
     }
-    /* Slider */
-    .slick-slider {
-        position: relative;
-        display: block;
-        box-sizing: border-box;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-touch-callout: none;
-        -khtml-user-select: none;
-        -ms-touch-action: pan-y;
-        touch-action: pan-y;
-        -webkit-tap-highlight-color: transparent;
-    }
-    .slick-list {
-        position: relative;
-        display: block;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-    }
-    .slick-list:focus {
-        outline: none;
-    }
-    .slick-list.dragging {
-        cursor: pointer;
-        cursor: hand;
-    }
-    .slick-slider .slick-track,
-    .slick-slider .slick-list {
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-        -ms-transform: translate3d(0, 0, 0);
-        -o-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    .slick-track {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        top: 0;
-        left: 0;
-        display: block;
-    }
-    .slick-track:before,
-    .slick-track:after {
-        display: table;
-        content: '';
-    }
-    .slick-track:after {
-        clear: both;
-    }
-    .slick-loading .slick-track {
-        visibility: hidden;
-    }
-    .slick-slide {
-        display: none;
-        float: left;
-        height: 509px;
-        /* height: 100%; */
-    }
-    [dir='rtl'] .slick-slide {
-        float: right;
-    }
-    .slick-slide img {
-        display: flex;
-        align-items: center;
-        margin: 0 auto;
-        /* margin-top:auto;
-    margin-bottom: auto;
-    display: block; */
-    }
-    .slick-slide.slick-loading img {
-        display: none;
-    }
-    .slick-slide.dragging img {
-        pointer-events: none;
-    }
-    .slick-initialized .slick-slide {
-        display: block;
-    }
-    .slick-loading .slick-slide {
-        visibility: hidden;
-    }
-    .slick-vertical .slick-slide {
-        display: block;
-        height: auto;
-        border: 1px solid transparent;
-    }
-    .slick-arrow.slick-hidden {
-        display: none;
-    }
+   
     .ss-icon {
         font-family: 'SSEtsy';
     }

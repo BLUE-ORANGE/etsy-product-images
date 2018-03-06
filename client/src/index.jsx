@@ -18,6 +18,12 @@ class Carousel extends React.Component {
     this.getImages(this.getRandomInt());
     this.handleClickThumbnail = this.handleClickThumbnail.bind(this);
   }
+  componentWillMount() {
+    // this.random();
+    const idPathname = window.location.pathname.split('/')[3];
+
+    this.getImages(Number(idPathname));
+  }
 
   getRandomInt() {
     return Math.floor(Math.random() * Math.floor(this.max));

@@ -1,7 +1,10 @@
 const express = require('express');
+const path = require('path');
 
 const router = express.Router();
 const db = require('../database/index.js');
+
+router.use('/:id', express.static(path.join(__dirname, '/../public/')));
 
 
 router.get('/:id/images', (req, res) => {

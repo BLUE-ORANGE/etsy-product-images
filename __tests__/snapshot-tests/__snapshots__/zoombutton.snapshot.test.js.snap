@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the zoom button with reference to imageUrl 1`] = `
+<a
+  className="zoom"
+  id="zoom"
+  onClick={[Function]}
+>
+  <span
+    className="ss-icon"
+  >
+    🔎
+  </span>
+  zoom
+</a>
+`;

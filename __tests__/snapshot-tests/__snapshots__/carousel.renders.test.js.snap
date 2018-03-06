@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`carousel navigation renders correctly 1`] = `
+<ul
+  className="slick-dots"
+>
+  <li
+    onClick={[Function]}
+  >
+    <img
+      alt="random cat"
+      src="https://i.imgur.com/zmTGRu1.jpg"
+      style={
+        Object {
+          "borderRadius": "3px",
+          "height": "30px",
+          "width": "30px",
+        }
+      }
+    />
+  </li>
+  <li
+    onClick={[Function]}
+  >
+    <img
+      alt="random cat"
+      className="thumb-default"
+      src="https://i.imgur.com/V1XNLjh.jpg"
+      style={
+        Object {
+          "borderRadius": "3px",
+          "height": "30px",
+          "width": "30px",
+        }
+      }
+    />
+  </li>
+  <li
+    onClick={[Function]}
+  >
+    <img
+      alt="random cat"
+      className="thumb-default"
+      src="https://i.imgur.com/jpc5JTA.jpg"
+      style={
+        Object {
+          "borderRadius": "3px",
+          "height": "30px",
+          "width": "30px",
+        }
+      }
+    />
+  </li>
+</ul>
+`;

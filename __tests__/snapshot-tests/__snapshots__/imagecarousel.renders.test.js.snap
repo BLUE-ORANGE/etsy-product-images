@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageCarousel renders images 1`] = `
+<div>
+  <img
+    alt="cat"
+    className="carousel-image show"
+    src="https://i.imgur.com/zmTGRu1.jpg"
+    style={
+      Object {
+        "backgroundColor": "#F2F1F1",
+        "borderRadius": "3px",
+        "height": "456px",
+        "objectFit": "scale-down",
+        "width": "570px",
+      }
+    }
+  />
+</div>
+`;

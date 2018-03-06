@@ -30,7 +30,7 @@ class ZoomButton extends React.Component {
 
   render() {
     return (
-      <a className="zoom" id="zoom"  onClick={e => this.handleClick(e)}>
+      <a className="zoom" id="zoom" onClick={e => this.handleClick(e)}>
         <span className="ss-icon">🔎</span>zoom
         {
 

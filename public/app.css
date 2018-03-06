@@ -539,10 +539,6 @@
     margin-top: 7px;
 }
 
-img[class] {
-    width: 100%;
-}
-
     .slick-active,
     .slick-slide {
         background-color: rgb(245, 245, 241);

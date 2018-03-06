@@ -8,15 +8,9 @@ import testData from '../testData/apiMock';
 
 describe('ZoomButtonComponent', () => {
   it('Renders zoom by default', () => {
-    const zoomButton = shallow(<ZoomButton
-      image={testData.testData[0]}
-    />);
-
-    const medium = testData.testData[0];
-    const large = testData.testData[0];
-    // Now you can spy on instance methods
+    const zoomButton = shallow(React.createElement(ZoomButton, { image: testData.testData[0] }));
     const link = zoomButton.find('a');
-    const modal = zoomButton.childAt(0);
+
 
     link.simulate('click');
     expect(zoomButton.state('displayZoom')).toEqual(true);

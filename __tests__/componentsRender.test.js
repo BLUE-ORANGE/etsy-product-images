@@ -23,8 +23,10 @@ test('should have CarouselNavigation component', () => {
 });
 
 test('should have ZoomButton component', () => {
-  const zoomButton = shallow(<ZoomButton medium={testData.testData[0].imageUrl}
-      large={testData.testData[0].imageUrl} />);
+  const zoomButton = shallow(<ZoomButton
+    medium={testData.testData[0].imageUrl}
+    large={testData.testData[0].imageUrl}
+  />);
 
   expect(zoomButton.exists()).toEqual(true);
 });

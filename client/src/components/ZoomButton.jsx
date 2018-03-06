@@ -22,7 +22,6 @@ class ZoomButton extends React.Component {
   }
 
   handleClick(e) {
-    console.log(e.target);
     this.setState({
       displayZoom: true,
     });

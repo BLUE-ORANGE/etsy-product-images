@@ -21,8 +21,9 @@ class Carousel extends React.Component {
   componentWillMount() {
     // this.random();
     const idPathname = window.location.pathname.split('/')[3];
-
-    this.getImages(Number(idPathname));
+    if (idPathname) {
+      this.getImages(Number(idPathname));
+    }
   }
 
   getRandomInt() {

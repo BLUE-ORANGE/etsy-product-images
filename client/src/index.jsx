@@ -8,7 +8,7 @@ import CarouselNavigation from './components/CarouselNavigation';
 import ZoomButton from './components/ZoomButton';
 import styles from '../../public/app.css';
 
-class App extends React.Component {
+class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -114,5 +114,5 @@ class App extends React.Component {
   }
 }
 
-export default ReactDOM.render(<App />, document.getElementById('app') || document.createElement('div'));
+export default ReactDOM.render(<Carousel />, document.getElementById('carousel') || document.createElement('div'));
 

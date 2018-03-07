@@ -54,7 +54,7 @@
 .slick-prev,
 .slick-next {
 
-    top: 0%;
+
     height: 100%;
     line-height: 86px;
 }
@@ -126,10 +126,10 @@
     text-shadow: none;
     text-transform: none;
     top: 228px;
-    transition-delay: 0s;
+    /* transition-delay: 0s;
     transition-duration: 0.1s;
     transition-property: all;
-    transition-timing-function: ease;
+    transition-timing-function: ease; */
     user-select: none;
     visibility: visible;
     white-space: nowrap;
@@ -199,7 +199,7 @@
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 0px;
-    position: sticky;
+    position: absolute;
     text-align: center;
     text-decoration-color: rgb(242, 241, 241);
     text-decoration-line: none;
@@ -209,10 +209,10 @@
     text-shadow: none;
     text-transform: none;
     top: 228px;
-    transition-delay: 0s;
+    /* transition-delay: 0s;
     transition-duration: 0.1s;
     transition-property: all;
-    transition-timing-function: ease;
+    transition-timing-function: ease; */
     user-select: none;
     visibility: visible;
     white-space: nowrap;
@@ -392,7 +392,7 @@
     width: 90%;
 }
 
-.slick-prev:hover,
+/* .slick-prev:hover,
 .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus {
@@ -415,46 +415,47 @@
 
 .slick-prev:before,
 .slick-next:before {
-    /* font-family: "SSStandard"; */
+    /* 
+    font-family: "SSStandard"; 
     font-size: 20px;
     line-height: 86px;
     opacity: .75;
     color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 .slick-prev {
     /* left: -25px; */
 }
 
-[dir='rtl'] .slick-prev {
+.slick-prev {
     right: -25px;
     left: auto;
 }
 
-.slick-prev:before {
+.slick-prev {
     line-height: 86px;
     content: '\25C5';
     font-family: "SSStandard"
 }
 
-[dir='rtl'] .slick-prev:before {
+.slick-prev {
     content: '\25BB';
     font-family: "SSStandard"
 }
 
 
-[dir='rtl'] .slick-next {
+.slick-next {
     /* right: auto;
     left: -25px; */
 }
 
-.slick-next:before {
+.slick-next {
     content: '\25BB';
 }
 
-[dir='rtl'] .slick-next:before {
+ .slick-next {
     line-height: 86px;
     content: '\25C5';
 }

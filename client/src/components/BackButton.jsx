@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BackButton = props => (
-  <div {...props} />
+  <div {...props}>◅</div>
   // ▻
 );
 

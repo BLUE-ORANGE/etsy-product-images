@@ -88,22 +88,16 @@ class Carousel extends React.Component {
 
   render() {
     return (
-      <div
-        style={{
-         margin: '0px',
-         padding: '0px',
-         width: '570px',
-         height: '456px',
-
-         }}
-      >
+      <div className="image-container">
         <div>
-          <BackButton className="slick-prev" onClick={() => this.handleClickPrev()} />
-          <ForwardButton onClick={() => this.handleClickNext()} />
           {
           this.state.images.length > 0 ?
             <ImageCarousel images={this.state.images} /> : ''
           }
+          <div>
+          <BackButton className="slick-prev" onClick={() => this.handleClickPrev()} />
+          <ForwardButton onClick={() => this.handleClickNext()} />
+        </div>
         </div>
         <div className="image-footer">
 

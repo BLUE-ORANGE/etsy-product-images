@@ -1,3 +1,60 @@
+.image-container {
+    margin: 0px;
+    padding: 0px;
+    width: 570px;
+    height: 456px;
+    position: absolute;
+}
+.thumbnail-images {
+    width: '30px';
+    height: '30px';
+    border-radius: '3px';
+}
+.next {
+    background-color: rgb(151, 146, 143);
+    border-bottom-color: rgb(242, 241, 241);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-color: rgb(242, 241, 241);
+    border-bottom-color: rgb(242, 241, 241);
+    font-family: SSStandard;
+    line-height: 86px;
+    height: 80px;
+    font-weight: 400;
+    font-size: 24px;
+    width: 40px;
+    color: rgb(242, 241, 241);
+    opacity: 0.4;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    right:0px;
+    float: right;
+    margin-top:-40px;
+    text-align: center;
+}
+.prev {
+    background-color: rgb(151, 146, 143);
+    border-bottom-color: rgb(242, 241, 241);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-color: rgb(242, 241, 241);
+    border-bottom-color: rgb(242, 241, 241);
+    font-family: SSStandard;
+    line-height: 86px;
+    height: 80px;
+    font-weight: 400;
+    font-size: 24px;
+    width: 40px;
+    color: rgb(242, 241, 241);
+    opacity: 0.4;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    margin-top:-40px;
+    text-align: center;
+}
+
 #image-right-arrow-container {
     float: right;
 }
@@ -436,12 +493,12 @@
 
 .slick-prev {
     line-height: 86px;
-    content: '\25C5';
+
     font-family: "SSStandard"
 }
 
 .slick-prev {
-    content: '\25BB';
+
     font-family: "SSStandard"
 }
 

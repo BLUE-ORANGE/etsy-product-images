@@ -32,6 +32,7 @@
     float: right;
     margin-top:-40px;
     text-align: center;
+    cursor: default;
 }
 .prev {
     background-color: rgb(151, 146, 143);
@@ -53,6 +54,7 @@
     top: 50%;
     margin-top:-40px;
     text-align: center;
+    cursor: default;
 }
 
 #image-right-arrow-container {

@@ -12,11 +12,15 @@ Product image carousel for etsy product details page
 1. [Development](#development)
 
 ## Usage
-
+- Install dependencies:
+```
+yarn install
+```
+- Build bundle.js
 ```sh
 yarn run webpack-watch
 ```
-in a new terminal execute
+- Run server
 ```sh
 yarn run mon
 ```
@@ -83,7 +87,9 @@ Requirements:
 - [postgres](https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb)
   - create a db user student / student
 
-- Install dependencies:
+- Create DB:
+  ### etsy-trevor
+- Install dependencies(if haven't already)
 ```
 yarn install
 ```

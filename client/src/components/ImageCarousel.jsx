@@ -14,7 +14,7 @@ const ImageCarousel = (props) => {
           objectFit: 'scale-down',
           height: '456px',
           width: '570px',
-          backgroundColor: '#F2F1F1',
+          backgroundColor: '#f5f5f1',
           borderRadius: '3px',
         }}
         className={componentClasses.join(' ')}

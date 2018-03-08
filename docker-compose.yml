@@ -1,0 +1,26 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: student
+      POSTGRES_USER: student
+      POSTGRES_DB: etsy-dock
+
+  web:
+    image: etsy-product-images:latest
+    restart: always
+    environment:
+        HOSTNAME: web
+        DB_USER: student
+        DB_PASS: student
+        DB_NAME: etsy-dock
+        DB_HOST: postgres://student:student@db:5432/etsy-dock
+    ports:
+     - 5432:5432
+     - 8000:8000
+    

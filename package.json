@@ -2,11 +2,10 @@
   "name": "etsy-product-images",
   "jest": {
     "setupFiles": [
-       "./client/src/jest-setup.js"
+      "./client/src/jest-setup.js"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
     }
   },
@@ -16,7 +15,9 @@
   "scripts": {
     "test": "jest",
     "webpack-watch": "webpack --watch",
-    "mon": "nodemon server/app.js"
+    "seed": "node seedDatabase.js",
+    "mon": "node server/app.js",
+    "start": "npm run-script seed && npm run-script mon"
   },
   "repository": {
     "type": "git",
@@ -53,9 +54,11 @@
     "webpack": "^3.11.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "css-loader": "^0.28.10",
+    "dotenv": "^5.0.1",
     "express": "4.x",
     "express-fonts": "^1.0.4",
     "express-http-proxy": "^1.1.0",

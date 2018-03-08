@@ -1,3 +1,4 @@
+
 const express = require('express');
 const path = require('path');
 
@@ -15,6 +16,7 @@ router.get('/:id/images', (req, res) => {
           results: [],
         };
         resp.results = data;
+        res.setHeader('url', req.path);
         res.send(resp);
       })
       .catch((err) => {

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
 import ForwardButton from './components/ForwardButton';
 import BackButton from './components/BackButton';
 import ImageCarousel from './components/ImageCarousel';
 import CarouselNavigation from './components/CarouselNavigation';
 import ZoomButton from './components/ZoomButton';
 import styles from '../../public/app.css';
+import axios from 'axios';
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class Carousel extends React.Component {
       images: [],
     };
     this.max = 200;
-    this.getImages(this.getRandomInt());
+    this.fetch(this.getRandomInt());
     this.handleClickThumbnail = this.handleClickThumbnail.bind(this);
   }
   componentWillMount() {
@@ -29,15 +29,15 @@ class Carousel extends React.Component {
   getRandomInt() {
     return Math.floor(Math.random() * Math.floor(this.max));
   }
-
-  getImages(id) {
-    $.ajax({
-      method: 'GET',
-      url: `/v1/product/${id}/images`,
-      contentType: 'application/json',
-      success: (data) => {
+  fetch(id) {
+    axios.get(`${process.env.HOST_NAME}/v1/product/${id}/images`, {
+      headers: {
+        contentType: 'application/json',
+      },
+    })
+      .then((data) => {
         if (data) {
-          const images = data.results.map((image, i) => {
+          const images = data.data.results.map((image, i) => {
             if (i === 0) {
               image.focused = true;
             } else {
@@ -47,8 +47,7 @@ class Carousel extends React.Component {
           });
           this.setState({ images });
         }
-      },
-    });
+      }).catch(err => console.log(err));
   }
 
 
@@ -95,9 +94,9 @@ class Carousel extends React.Component {
             <ImageCarousel images={this.state.images} /> : ''
           }
           <div>
-          <BackButton className="slick-prev" onClick={() => this.handleClickPrev()} />
-          <ForwardButton onClick={() => this.handleClickNext()} />
-        </div>
+            <BackButton className="slick-prev" onClick={() => this.handleClickPrev()} />
+            <ForwardButton onClick={() => this.handleClickNext()} />
+          </div>
         </div>
         <div className="image-footer">
 

@@ -5,9 +5,8 @@ const cors = require('cors');
 const jsonParser = bodyParser.json();
 const db = require('../database/index.js');
 const route = require('./routes.js');
+require('dotenv').config();
 
-
-const PORT = 3003;
 const app = express();
 
 const morgan = require('morgan');
@@ -33,6 +32,4 @@ app.get('/image', (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-  console.log(`listening on port: ${PORT}`);
-});
+app.listen(process.env.PORT, () => console.log(`listening on ${process.env.HOSTNAME} port: ${process.env.PORT}`));

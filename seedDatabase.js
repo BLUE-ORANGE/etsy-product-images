@@ -1,11 +1,8 @@
 
 const Sequelize = require('sequelize');
+require('dotenv').config();
 
-const sqlz = new Sequelize('etsy-trevor', 'student', 'student', {
-  host: 'localhost',
-  port: 5432,
-  dialect: 'postgres',
-});
+const sqlz = new Sequelize(process.env.DB_HOST);
 
 
 const kitties = [{
@@ -5848,9 +5845,11 @@ ProductImageUrl.sync(() => {
     ProductImageUrl.bulkCreate(fixProductIds(kitties))
       .then((success) => {
         console.log(`success: ${success}`);
+        sqlz.close();
       })
       .catch((eror) => {
         console.log(`error: ${eror}`);
+        sqlz.close();
       });
   })
   .catch((error) => {

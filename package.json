@@ -14,10 +14,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "webpack": "webpack",
     "webpack-watch": "webpack --watch",
     "seed": "node seedDatabase.js",
     "mon": "node server/app.js",
-    "start": "npm run-script seed && npm run-script mon"
+    "start": "npm run-script seed && npm run-script webpack && npm run-script mon"
   },
   "repository": {
     "type": "git",

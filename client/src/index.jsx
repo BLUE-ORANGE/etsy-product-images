@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 import ForwardButton from './components/ForwardButton';
 import BackButton from './components/BackButton';
 import ImageCarousel from './components/ImageCarousel';
 import CarouselNavigation from './components/CarouselNavigation';
 import ZoomButton from './components/ZoomButton';
 import styles from '../../public/app.css';
-import axios from 'axios';
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class Carousel extends React.Component {
     // this.random();
     const idPathname = window.location.pathname.split('/')[3];
     if (idPathname) {
-      this.getImages(Number(idPathname));
+      // this.fetch(Number(idPathname));
     }
   }
 
@@ -30,7 +30,7 @@ class Carousel extends React.Component {
     return Math.floor(Math.random() * Math.floor(this.max));
   }
   fetch(id) {
-    axios.get(`${process.env.HOST_NAME}/v1/product/${id}/images`, {
+    axios.get(`/v1/product/${id}/images`, {
       headers: {
         contentType: 'application/json',
       },

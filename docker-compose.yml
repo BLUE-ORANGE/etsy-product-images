@@ -12,7 +12,7 @@ services:
       POSTGRES_DB: etsy-dock
 
   web:
-    image: etsy-product-images:latest
+    image: trevorold/etsy-product-images:latest
     restart: always
     environment:
         HOSTNAME: web
@@ -20,6 +20,8 @@ services:
         DB_PASS: student
         DB_NAME: etsy-dock
         DB_HOST: postgres://student:student@db:5432/etsy-dock
+
+    command: bash -c 'while !</dev/tcp/postgres/5432; do sleep 1; done; npm start'
     ports:
      - 5432:5432
      - 8000:8000

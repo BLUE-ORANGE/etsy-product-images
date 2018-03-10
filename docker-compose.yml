@@ -11,7 +11,7 @@ services:
       POSTGRES_DB: etsy-dock
 
   etsy-images:
-    image: hardcoded:latest
+    image: trevorold/etsy-product-images:finaldraft
     restart: always
     environment:
       DB_USER: student
@@ -40,7 +40,7 @@ services:
     - 3004:3004
 
   etsy-proxy:
-    image: trevor-proxy-server:latest
+    image: trevorold/trevor-proxy-server:latest
     restart: always
     environment:
       IMAGES: etsy-images

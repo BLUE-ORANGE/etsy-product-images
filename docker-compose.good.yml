@@ -11,14 +11,13 @@ services:
       POSTGRES_DB: etsy-dock
 
   etsy-images:
-    image: hardcoded:latest
+    image: trevorold/etsy-product-images:latest
     restart: always
     environment:
       DB_USER: student
       DB_PASS: student
       DB_NAME: etsy-dock
       DB_HOST: postgres://student:student@db:5432/etsy-dock
-      HOST_NAME: 0.0.0.0
       PORT: 8001
     ports:
     - 8001:8001
@@ -28,22 +27,11 @@ services:
     restart: always
     environment:
       DB_HOST: postgres://student:student@db:5432/etsy-dock
-    ports:
-    - 3002:3002
-    
-  etsy-reviews:
-    image: hirichardhai/product-reviews:firsttry
-    restart: always
-    environment:
-      DB_HOST: postgres://student:student@db:5432/etsy-dock
-    ports:
-    - 3004:3004
+    command: bash -c 'while !</dev/tcp/postgres/5432; do sleep 1; done; npm start'
 
   etsy-proxy:
-    image: trevor-proxy-server:latest
+    image: trevorold/trevor-proxy-server:latest
     restart: always
-    environment:
-      IMAGES: etsy-images
     ports:
      - 5432:5432
      - 80:80

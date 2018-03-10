@@ -1,0 +1,30 @@
+# Use postgres/example user/password credentials
+
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: student
+      POSTGRES_USER: student
+      POSTGRES_DB: etsy-dock
+
+  web:
+    image: trevorold/etsy-product-images:latest
+    restart: always
+    environment:
+        HOSTNAME: web
+        DB_USER: student
+        DB_PASS: student
+        DB_NAME: etsy-dock
+        DB_HOST: postgres://student:student@db:5432/etsy-dock
+        PORT: 8000
+
+    command: bash -c 'while !</dev/tcp/postgres/5432; do sleep 1; done; npm start'
+    ports:
+     - 5432:5432
+     - 80:80
+     - 8000:8000
+    
